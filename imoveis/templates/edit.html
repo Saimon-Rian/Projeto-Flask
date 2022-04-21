@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Editar{% endblock %}
+{% block content %}
+<h1 style="text-align: center">Edit {{ realty.name }}</h1>
+<form action="/edit/{{realty.id}}" class="container" method="post">
+    <div class="row">
+        <div class="col-md-6">
+            <input type="number" name="id" id="id" placeholder="ID" class="form-control" value="{{ realty.id }}">
+        </div>
+        <div class="col-md-6">
+            <input type="text" name="name" id="name" placeholder="Nome" class="form-control" value="{{ realty.name }}">
+        </div>
+        <div class="col-md-6">
+            <input title= "Email, telephone, other..." type="text" name="contact"  id= "contact" placeholder="Contato" class="form-control" value="{{ realty.contact }}">
+        </div>
+        <div class="col-md-6">
+            <input title= "Home, apartment, other..." type="text" name="realty" id="realty" placeholder="Tipo de imóvel" class="form-control" value="{{ realty.realty }}">
+        </div>
+        <div class="col-md-6">
+            <input type="text" name="state" id="state" placeholder="Estado" class="form-control" value="{{ realty.state }}">
+        </div>
+        <div class="col-md-6">
+            <input title="Neighborhood, street, other..." type="text" name="locality" id="Locality" placeholder="Local" class="form-control" value="{{ realty.locality }}">
+        </div>
+        <div class="col-md-6">
+            <input type="text" name="value" id="value" placeholder="Valor" class="form-control" value="{{ realty.value }}">
+        </div>
+    </div>
+    <br>
+    <div class="row col-xs-12">
+        <button type="submit" class="btn btn-block btn-success">Feito!</button>
+    </div>
+</form>
+{% endblock %}

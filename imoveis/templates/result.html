@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title%}Search Result{% endblock %}
+{% block content %}
+<h1 style="text-align: center">Resultado da pesquisa</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Contato</th>
+                    <th>Imóvel</th>
+                    <th>Estado</th>
+                    <th>Local</th>
+                    <th>Valor</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for q in realty %}
+                    <tr>
+                        <td>{{ q.name }}</td>
+                        <td>{{ q.contact }}</td>
+                        <td>{{ q.realty }}</td>
+                        <td>{{ q.state }}</td>
+                        <td>{{ q.locality }}</td>
+                        <td>R${{ q.value }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

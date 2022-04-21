@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title%}Adicionar Imóveis{% endblock %}
+{% block content %}
+<form action="/register_realty" class="container" method="post">
+    <h1 style="text-align: center">Cadastrar imóvel</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <input type="text" name="name" id="name" placeholder="Nome" class="form-control">
+        </div>
+        <br>
+        <div class="col-md-6">
+            <input title= "Email, telefone, outro..." type="text" name="contact"  id= "contact" placeholder="Contato" class="form-control">
+        </div>
+        <br>
+        <div class="col-md-6">
+            <input title= "Casa, apartamento outrp..." type="text" name="realty" id="realty" placeholder="Tipo de imóvel" class="form-control">
+        </div>
+        <br>
+        <div class="col-md-6">
+            <input type="text" name="state" id="state" placeholder="Estado" class="form-control">
+        </div>
+        <br>
+        <div class="col-md-6">
+            <input title="Bairro, rua, outro..." type="text" name="locality" id="locality" placeholder="Local" class="form-control">
+        </div>
+        <br>
+        <div class="col-md-6">
+            <input type="text" name="value" id="value" placeholder="Valor" class="form-control">
+        </div>
+        <br>
+        <div class="col-md-6">
+            <select name="owner" class="form-control">
+                {% for user in user_list %}
+                <option value="{{ user.id }}">{{ user.user }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <br>
+    <div class="row col-xs-12">
+        <button type="submit" class="btn btn-block btn-success">Done!</button>
+    </div>
+</form>
+{% endblock %}

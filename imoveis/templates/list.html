@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}List realty{% endblock %}
+{% block content %}
+<h1 style="text-align: center">Imóveis</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Dono</th>
+                    <th>Contato</th>
+                    <th>Imóvel</th>
+                    <th>Estado</th>
+                    <th>Local</th>
+                    <th>Valor</th>
+                    <th>Ações</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for e in realty %}
+                <tr>
+                    <td>{{e.id}}</td>
+                    <td>{{e.name}}</td>
+                    <td>{{e.contact}}</td>
+                    <td>{{e.realty}}</td>
+                    <td>{{e.state}}</td>
+                    <td>{{e.locality}}</td>
+                    <td>R${{e.value}}</td>
+                    <td>
+                        <a type="button" class="btn btn-primary btn-sm" href="/edit/{{e.id}}">Editar</a>
+                        <a type="button" class="btn btn-secondary btn-sm" href="/delete/{{e.id}}">Deletar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
